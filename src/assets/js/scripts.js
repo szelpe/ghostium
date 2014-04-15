@@ -72,14 +72,20 @@
 
         _prismHandler();
         NProgress.done();
+        $("#container").animate({ opacity: 1 }, 300);
       });
 
       var _pjaxOptions = {
         container: '[data-pjax-container]',
         fragment: '[data-pjax-container]'
       };
-
-      $document.pjax('a[data-pjax]', _pjaxOptions);
+            
+      $document.on('click', 'a[data-pjax]', function(event) {
+        event.preventDefault();
+        $("#container").animate({ opacity: 0 }, 300, function () {
+          $.pjax.click(event, _pjaxOptions);
+        });
+      })
 
       $document.on('submit', 'form[data-pjax]', function(e) {
         $.pjax.submit(e, _pjaxOptions);

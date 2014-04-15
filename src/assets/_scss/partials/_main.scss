@@ -12,14 +12,9 @@ body {
 
 #container {
   position: relative;
-  transition: transform cubic-bezier(.2, .3, .25, .9) .2s, opacity .3s;
+  transition: transform cubic-bezier(.2, .3, .25, .9) .2s;
   backface-visibility: hidden;
   opacity: 1;
-
-  .nprogress-busy & {
-    transition-delay: .1s;
-    opacity: 0;
-  }
 
   .drawer-transition & {
     //z-index: 100;
