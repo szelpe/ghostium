@@ -39,53 +39,6 @@
 
     _prismHandler();
 
-    // PJax bindings
-    // =================
-    if ($.support.pjax) {
-      $document.on('pjax:start', function() {
-        NProgress.start();
-        $surface.scrollTop(0);
-      });
-
-      $document.on('pjax:end', function() {
-        if(typeof ga === 'function') {
-          ga('set', 'location', window.location.href);
-          ga('send', 'pageview');
-        }
-
-        if(typeof DISQUS === 'object' && $('#disqus_thread').length) {
-          DISQUS.reset({
-            reload: true,
-            config: function () {
-              this.page.identifier = disqus_identifier;
-            }
-          });
-        }
-
-        if(typeof DISQUSWIDGETS === 'object') {
-          DISQUSWIDGETS.getCount();
-        }
-
-        $('[data-load-image]', $content).each(function() {
-          ImageLoader.load($(this));
-        });
-
-        _prismHandler();
-        NProgress.done();
-      });
-
-      var _pjaxOptions = {
-        container: '[data-pjax-container]',
-        fragment: '[data-pjax-container]'
-      };
-
-      $document.pjax('a[data-pjax]', _pjaxOptions);
-
-      $document.on('submit', 'form[data-pjax]', function(e) {
-        $.pjax.submit(e, _pjaxOptions);
-      });
-    }
-
     // Data API bindings
     // =================
     $document.on('click', '[data-action]', function(e) {
