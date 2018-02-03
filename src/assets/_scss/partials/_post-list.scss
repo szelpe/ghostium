@@ -59,7 +59,7 @@
   color: $muted-text-color;
 
   &:before {
-    content: ' · ';
+    content: ' \B7 ';
   }
 
   &:first-child:before {
