@@ -1,5 +1,5 @@
 {
-  "name": "Ghostium",
+  "name": "ghostium",
   "version": "2.3.2",
   "dependencies": {
     "modernizr": "~2.6.2",
@@ -20,8 +20,6 @@
   "devDependencies": {
     "fastclick": "~0.6.10",
     "font-awesome": "~4.1.0",
-    "prism": "gh-pages",
-    "pace": "~0.5.1",
-    "jquery-pjax": "master"
+    "prism": "gh-pages"
   }
 }

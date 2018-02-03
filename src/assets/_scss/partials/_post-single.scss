@@ -8,6 +8,17 @@
   position: relative;
 }
 
+.logo-header a {
+    text-indent: -10000px;
+    overflow: hidden;
+    display: block;
+    height: 150px;
+    width: 200px;
+    margin: auto;
+    background: url(/logo.png) top center;
+    background-repeat: no-repeat;
+}
+
 .post-header {}
 
 .post-meta-list {
