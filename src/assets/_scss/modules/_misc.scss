@@ -3,3 +3,16 @@
   color: #fff;
   text-shadow: none;
 }
+
+:not(pre) > code {
+  color: #657b83;
+  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+  font-size: 80%;
+  max-width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  padding: .1em;
+  border-radius: .3em;
+  background-color: #fdf6e3;
+}
